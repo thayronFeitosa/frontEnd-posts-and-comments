@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Container } from './styles';
 import { Form } from '@unform/web';
 import { SubmitHandler, FormHandles } from '@unform/core'
-import * as Yup from 'yup';
-import Input from '../../../container/input';
-import Navigation from '../../../container/navigation';
-import { useToast } from '../../../hooks/toast';
 
-import axios from '../../../services/api';
+import Navigation from '../../container/navigation';
+import { useToast } from '../../hooks/toast';
+
+import axios from '../../services/api';
 
 interface FormData {
   title: string;
@@ -18,30 +17,30 @@ interface FormData {
 const NotPermitted: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const { addToast } = useToast();
+  const { id } = useParams<{ id: string }>();
 
   const handleSubmit: SubmitHandler<FormData> = () => {
-    const title = document.getElementById('input') as HTMLInputElement;
     const description = document.getElementById('textarea') as HTMLInputElement;
 
     const data = {
       description: description.value,
-      title: title.value
+      post_id: id
     }
 
-    if(data.title === '' || data.description === '') {
+    if(data.description === '') {
       addToast({
         type: 'error',
         title: 'Erro no cadastro',
-        description: 'Campos titulo e descrição são obrigatórios',
+        description: 'Não é possível comentar vazio',
       });
       return
     }
 
-    axios.post('/api/posts', data).then((response) => {
+    axios.post('/api/comments', data).then((response) => {
       addToast({
         type: 'success',
-        title: 'Cadastro realizado',
-        description: 'Cadastro realizado com sucesso',
+        title: 'Comentário realizado',
+        description: 'Comentário realizado com sucesso',
       });
 
     }).catch((err) => {
@@ -57,16 +56,13 @@ const NotPermitted: React.FC = () => {
     <Container>
       <Navigation name1="/" title1="Novo post" name2="/all/posts" title2="Ver posts" name3="/last/post" title3="Último Comentario" />
       <div id="row">
-        <h1>Criando novo Post</h1>
+        <h1>Comentar</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
-          <div>
-            <input id="input" name="title" type="text" placeholder="Titulo" />
-          </div>
           <div>
             <textarea id="textarea" name="description" placeholder="Descição" />
           </div>
           <div id="button">
-            <button type="submit">Publicar</button>
+            <button type="submit">Comentar</button>
           </div>
         </Form>
       </div>

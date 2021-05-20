@@ -20,8 +20,15 @@ export const Container = styled.div`
       padding-left: 10px;;
     }
     
-    >span {
+    >textarea {
       padding-left: 10px;;
+      min-height: 100px;
+      min-width: 578px;
+      background: rgb(225, 225, 230);
+      border: none;
+      resize: none;
+      outline-style: none;
+
     }
 
     #linha {
@@ -29,6 +36,40 @@ export const Container = styled.div`
       height: 1px;
       width: 100%;
       margin: 2.5rem 0px;
+    }
+
+
+    #button {
+      display: flex;
+      justify-content: flex-end;
+
+      >button{
+        width: 120px;
+        height: 35px;
+        left: 288px;
+        top: 706px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        background: #0A1F44;
+        border-radius: 10px;
+        color: #FFFFFF;
+        text-decoration: none;
+
+        .retirarLink {
+          text-decoration: none;
+          font-size: 18px;
+          line-height: 21px;
+          color: #FFFFFF;
+        }
+      }
+
+      
     }
 
   }

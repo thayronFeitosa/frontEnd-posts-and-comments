@@ -14,10 +14,7 @@ ul{
     border-radius: 8px;
     margin-top: 2%;
     margin: 1px 22px 0px 0px;
-    @media(max-height: 800px) {
-    width: 1.2%;
-    margin: 10px 20px 40px -20px;
-  }
+
   }
   .single{
     color: #2AA9E0;
@@ -27,28 +24,22 @@ li{
   list-style-type: none;
   display: inline-block;
   font-size: 20px;
-  width: 120px;
+  width: 200px;
 
   margin: 1px 1px 1px 1px;
-  @media(max-height: 800px) {
-    margin: 1px 1px 1px 1px;
-    font-size: 15px;
-  }
+
 }
 a{
   text-decoration: none;
   font-size: 20px;
   line-height: 36px;
   color: #ffff;
-  @media(max-height: 800px) {
-  font-size: 22px;
-  }
+
 }
 .bold{
   & a{
     color:  #FFFFFF;
     font-weight: bold;
-      width: 200px;
 
   }
 }
