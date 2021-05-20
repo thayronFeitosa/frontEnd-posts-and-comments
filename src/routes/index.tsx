@@ -10,14 +10,16 @@ import Route from './Route';
 import Register from '../pages/register';
 import Login from '../pages/login/index';
 import Notfound from '../pages/notFound';
-import Post from '../pages/post';
+import Post from '../pages/post/new';
+import AllPosts  from '../pages/post/listAll';
 
 
 const PagesRoot: React.FC = () => (
   <Switch>
     <Route path="/login" exact component={Login} />
     <Route path="/users/register" exact component={Register} />
-    <Route path="/new/posts" exact component={Post} isPrivate />
+    <Route path="/" exact component={Post} isPrivate />
+    <Route path="/all/posts" exact component={AllPosts} isPrivate />
     <Rota component={Notfound} />
   </Switch>
 );

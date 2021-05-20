@@ -26,6 +26,9 @@ import { useToast } from '../../hooks/toast';
 interface SignInFormData {
   email: string;
   password: string;
+  password_confirmation: string;
+  name: string;
+  cpf: string;
 }
 
 const Login: React.FC = () => {
@@ -35,20 +38,31 @@ const Login: React.FC = () => {
   const { addToast } = useToast();
 
   async function handleSubmit(data: SignInFormData) {
+    const { password, password_confirmation } = data;
+
     try {
       formRef.current?.setErrors({});
       const schema = Yup.object().shape({
         email: Yup.string()
           .email('Digite um e-mail válido')
           .required('E-mail é obrigatório'),
-        password: Yup.string()
+        password: Yup.string().min(8)
           .required('Senha é obrigatória'),
         name: Yup.string()
           .required('Nome é obrigatório'),
         cpf: Yup.string()
           .required('CPF é obrigatório'),
+        password_confirmation: Yup.string()
+          .required('Confirmação da senha é obrigatorio')
       });
-
+      if (password !== password_confirmation) {
+        addToast({
+          type: 'error',
+          title: 'Erro ao cadastrar usuário!',
+          description: 'Confirmação da senha está inválida!',
+        });
+        return;
+      }
       await schema.validate(data, {
         abortEarly: false,
       });

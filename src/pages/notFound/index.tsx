@@ -20,7 +20,7 @@ const NotPermitted: React.FC = () => (
       </div>
 
       <div id="button">
-        <Link to="/new/posts">
+        <Link to="/">
           Voltar
         </Link>
       </div>

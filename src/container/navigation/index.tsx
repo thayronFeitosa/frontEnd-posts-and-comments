@@ -23,8 +23,7 @@ const Header: React.FC<headerProps> = ({
 
   const handleLogout = () => {
     localStorage.removeItem('@controllertokenacessauth');
-    history.push('/login');
-
+    window.location.reload(false);
   }
   return (
     <Container>

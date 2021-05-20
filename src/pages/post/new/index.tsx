@@ -4,11 +4,11 @@ import { Container } from './styles';
 import { Form } from '@unform/web';
 import { SubmitHandler, FormHandles } from '@unform/core'
 import * as Yup from 'yup';
-import Input from '../../container/input';
-import Navigation from '../../container/navigation';
-import { useToast } from '../../hooks/toast';
+import Input from '../../../container/input';
+import Navigation from '../../../container/navigation';
+import { useToast } from '../../../hooks/toast';
 
-import axios from '../../services/api';
+import axios from '../../../services/api';
 
 interface FormData {
   title: string;
@@ -55,7 +55,7 @@ const NotPermitted: React.FC = () => {
   }
   return (
     <Container>
-      <Navigation name1="/new/posts" title1="Novo post" name2="/all/posts" title2="Ver posts" name3="/last/post" title3="Último post" />
+      <Navigation name1="/" title1="Novo post" name2="/all/posts" title2="Ver posts" name3="/last/post" title3="Último post" />
       <div id="row">
         <h1>Criando novo Post</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
