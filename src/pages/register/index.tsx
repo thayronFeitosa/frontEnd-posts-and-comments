@@ -53,14 +53,12 @@ const Login: React.FC = () => {
         abortEarly: false,
       });
       axios.post('http://127.0.0.1:8000/api/users', data).then((response) => {
-        console.log(response.data);
         addToast({
           type: 'success',
           title: 'Usuário cadastrado!',
           description: 'Usuário cadastrado com sucesso!',
         });
       }).catch((error) => {
-        console.log(error.response.data.errors);
         addToast({
           type: 'success',
           title: 'Usuário cadastrado!',

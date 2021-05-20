@@ -48,14 +48,14 @@ const Login: React.FC = () => {
         email: data.email,
         password: data.password,
       });
-
-      history.push('/posts');
       const userStorage = JSON.parse(localStorage.getItem('@controller:user') || '{}');
+      const { name } = userStorage[0];
       addToast({
         type: 'success',
         title: 'Login realizado com sucesso!',
-        description: 'Seja bem vindo!',
+        description: `Seja bem vindo ${name}`,
       });
+
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);

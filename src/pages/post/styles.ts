@@ -20,6 +20,23 @@ export const Container = styled.div`
     #button {
       display: flex;
       justify-content: flex-end;
+
+      >button{
+        width: 150px;
+        height: 40px;
+        left: 288px;
+        top: 706px;
+        margin-top: 10px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        background: #0A1F44;
+        border-radius: 10px;
+        color: #FFFFFF;
+        text-decoration: none;
+      }
     }
   }
 `;

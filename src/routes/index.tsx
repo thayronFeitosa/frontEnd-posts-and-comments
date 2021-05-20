@@ -17,7 +17,7 @@ const PagesRoot: React.FC = () => (
   <Switch>
     <Route path="/login" exact component={Login} />
     <Route path="/users/register" exact component={Register} />
-    <Route path="/posts" exact component={Post} isPrivate />
+    <Route path="/new/posts" exact component={Post} isPrivate />
     <Rota component={Notfound} />
   </Switch>
 );
