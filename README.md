@@ -1,5 +1,8 @@
 # Getting Started with Create React App
+  <h3>Projeto back-end (api)</h3>
+  O back end feito em PHP se encontra no link a baixo.
 
+  <a href="https://github.com/thayronFeitosa/backEnd-posts-and-comments">Front end</a>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
