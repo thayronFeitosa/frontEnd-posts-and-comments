@@ -1,19 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import * as Yup from 'yup';
 import Navigation from '../../../container/navigation';
-import { useToast } from '../../../hooks/toast';
 import { Container } from './styles';
 import axios from '../../../services/api';
 import PostData from '../../../container/post'
 import Pagination from '../../../container/pagination';
 
-interface FormData {
-  title: string;
-  description: string;
-}
 
 const NotPermitted: React.FC = () => {
-  const { addToast } = useToast();
   const [offset, setOffset] = useState(0);
   const [data, setData] = useState([]);
   const [sizeArray, setSizeArray] = useState([]);
@@ -21,13 +14,13 @@ const NotPermitted: React.FC = () => {
   useEffect(() => {
     loadUsers(); // eslint-disable-next-line
     console.log(offset);
-    axios.get(`/api/posts?page=${offset -3}`).then((res) => {
+    axios.get(`/api/posts?page=${offset - 3}`).then((res) => {
       setData(res.data.data);
       setSizeArray(res.data.total);
     }).catch((err) => {
       console.log(err);
     })
-
+    // eslint-disable-next-line
   }, [offset]);
 
   const loadUsers = useCallback(async (a?: string) => {
@@ -37,7 +30,7 @@ const NotPermitted: React.FC = () => {
     }).catch((err) => {
       console.log(err);
     })
-
+// eslint-disable-next-line
   }, []);
   return (
     <Container>

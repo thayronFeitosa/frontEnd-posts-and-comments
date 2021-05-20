@@ -62,11 +62,11 @@ export const Container = styled.div`
         text-decoration: none;
 
         .retirarLink {
-          text-decoration: none;
-          font-size: 18px;
-          line-height: 21px;
-          color: #FFFFFF;
-        }
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 21px;
+        color: #FFFFFF;
+    }
       }
 
       

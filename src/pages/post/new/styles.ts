@@ -8,13 +8,36 @@ export const Container = styled.div`
 
     input {
       width: 600px;
-      height: 30px;
+      height: 40px;
       margin-bottom:10px;
+      background: #FFFFFF;
+      box-shadow: 0px 5px 44px 0px rgba(0, 0, 0, 0.13);
+      border-radius: 10px;
+      border: none;
+      outline-offset: 0px;
+      padding-left: 10px;
+      outline-offset: 0px;
+      font-size: 14px;
+
+    }
+    textarea:focus, input:focus, select:focus {
+    outline: 0;
     }
 
     textarea {
+      background: #FFFFFF;
+      box-shadow: 0px 5px 44px 22px rgba(0, 0, 0, 0.13);
+      border-radius: 18px;
       width: 600px;
       height: 300px;
+      border: none;
+      outline-offset: 0px;
+      outline-style: none;
+      padding-left: 10px;
+      padding-top: 10px;
+       resize: none;
+
+
     }
 
     #button {

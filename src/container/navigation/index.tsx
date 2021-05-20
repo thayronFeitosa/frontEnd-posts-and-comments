@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from './styles';
-import { useHistory } from 'react-router-dom'
+import { ContainerNave } from './styles';
+
 interface headerProps {
   name1: string;
   name2?: string;
@@ -19,14 +19,13 @@ const Header: React.FC<headerProps> = ({
   title2,
   title3,
 }) => {
-  const history = useHistory();
 
   const handleLogout = () => {
     localStorage.removeItem('@controllertokenacessauth');
     window.location.reload(false);
   }
   return (
-    <Container>
+    <ContainerNave>
       <nav>
         <div>
           <ul>
@@ -37,7 +36,7 @@ const Header: React.FC<headerProps> = ({
           </ul>
         </div>
       </nav>
-    </Container>
+    </ContainerNave>
   )
 };
 

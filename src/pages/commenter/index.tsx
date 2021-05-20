@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { Container } from './styles';
 import { Form } from '@unform/web';
 import { SubmitHandler, FormHandles } from '@unform/core'
@@ -18,9 +18,11 @@ const NotPermitted: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const { addToast } = useToast();
   const { id } = useParams<{ id: string }>();
+  const history = useHistory();
 
   const handleSubmit: SubmitHandler<FormData> = () => {
     const description = document.getElementById('textarea') as HTMLInputElement;
+
 
     const data = {
       description: description.value,
@@ -42,6 +44,8 @@ const NotPermitted: React.FC = () => {
         title: 'Comentário realizado',
         description: 'Comentário realizado com sucesso',
       });
+      history.push('/last/post');
+
 
     }).catch((err) => {
       addToast({

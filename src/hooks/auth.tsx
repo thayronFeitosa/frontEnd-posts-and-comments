@@ -44,13 +44,12 @@ const AuthProvider: React.FC = ({ children }) => {
     });
 
     const { token, user, refresh } = response.data;
-    const { permission } = user;
 
     localStorage.setItem('@controllertokenacessauth', token);
     localStorage.setItem('@controller:user', JSON.stringify(user));
     cookies.set('refresh', refresh, { path: '/' });
-    setData({ token, user });
-  }, []);
+    setData({ token, user }); // eslint-disable-next-line
+  }, []); 
 
   const signOut = useCallback(() => {
     localStorage.removeItem('@controllertokenacessauth');
@@ -66,8 +65,6 @@ const AuthProvider: React.FC = ({ children }) => {
 };
 
 const headersToken = () => {
-  const cookies = new Cookies();
-
   const AuthStr = `Bearer ${localStorage.getItem('@controllertokenacessauth')}`;
   const User = `${localStorage.getItem('@controller:user')}`;
 

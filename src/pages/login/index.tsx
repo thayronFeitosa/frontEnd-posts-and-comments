@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import {
@@ -24,7 +24,6 @@ interface SignInFormData {
 
 const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const history = useHistory();
 
   const { signIn } = useAuth();
   const { addToast } = useToast();
@@ -55,7 +54,6 @@ const Login: React.FC = () => {
         title: 'Login realizado com sucesso!',
         description: `Seja bem vindo ${name}`,
       });
-
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);

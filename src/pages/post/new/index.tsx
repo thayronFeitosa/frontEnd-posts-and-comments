@@ -1,10 +1,7 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { Container } from './styles';
 import { Form } from '@unform/web';
 import { SubmitHandler, FormHandles } from '@unform/core'
-import * as Yup from 'yup';
-import Input from '../../../container/input';
 import Navigation from '../../../container/navigation';
 import { useToast } from '../../../hooks/toast';
 
@@ -45,18 +42,20 @@ const NotPermitted: React.FC = () => {
       });
 
     }).catch((err) => {
+      console.log(err);
+      
       addToast({
         type: 'error',
         title: 'Erro no cadastro',
-        description: 'Erro ao ralizar o cadastro do usuário',
+        description: 'Erro ao tentar cadastrar o post',
       });
     })
 
   }
   return (
     <Container>
-      <Navigation name1="/" title1="Novo post" name2="/all/posts" title2="Ver posts" name3="/last/post" title3="Último Comentario" />
       <div id="row">
+      <Navigation name1="/" title1="Novo post" name2="/all/posts" title2="Ver posts" name3="/last/post" title3="Último Comentario" />
         <h1>Criando novo Post</h1>
         <Form ref={formRef} onSubmit={handleSubmit}>
           <div>

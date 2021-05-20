@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ContainerNave = styled.div`
 width: 100%;
 min-height: 2rem;;
 background: #2AA9E0;

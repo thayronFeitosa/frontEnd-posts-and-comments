@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import * as Yup from 'yup';
+import React from 'react';
 import { Container } from './styles';
 import moment from 'moment-timezone';
 import { Link } from 'react-router-dom';
@@ -36,7 +35,7 @@ const TableBody: React.FC<propsBody> = (props) => {
       <textarea disabled>{line.description}</textarea>
       <div id="button">
         <button>
-        <Link className="color-green retirarLink" to={`/comment/${line.id}`}>Editar</Link>
+          <Link className="color-green retirarLink" to={`/comment/${line.id}`}>Comentar</Link>
         </button>
       </div>
     </div>

@@ -20,7 +20,15 @@ export const Container = styled.div`
       padding-left: 10px;;
     }
     
+    textarea {
+      /* min-height: 100px;
+      min-width: 57px;
+      background: rgb(225, 225, 230);
+      border: none;
+      resize: none;
+      outline-style: none; */
 
+    }
     #linha {
       background-color: rgb(50, 50, 56);
       height: 1px;

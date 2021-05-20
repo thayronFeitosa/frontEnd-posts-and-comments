@@ -2,17 +2,14 @@ import React, { useRef } from 'react';
 import axios from 'axios'
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-import { FaUserCog, FaRegUser, FaUserTag } from 'react-icons/fa';
-import { FiAlertCircle } from 'react-icons/fi';
+import { FaRegUser } from 'react-icons/fa';
 import {
-  RiDashboardLine,
-  RiWhatsappFill,
+
   RiFileUserLine,
   RiMailLine,
   RiLockPasswordLine,
-  RiCommunityFill,
 
 } from 'react-icons/ri';
 import { Container } from './styles';
@@ -20,7 +17,6 @@ import GlobalStyles from '../../styles/loginGlobal';
 import Input from '../../container/input';
 import Button from '../../container/button';
 import getValidationErrors from '../../utils/getValidationErrors';
-import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 
 interface SignInFormData {
@@ -33,7 +29,6 @@ interface SignInFormData {
 
 const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const history = useHistory();
 
   const { addToast } = useToast();
 
