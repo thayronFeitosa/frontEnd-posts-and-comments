@@ -29,7 +29,7 @@ const TableBody: React.FC<propsBody> = (props) => {
   const lines = values.filter((line: valueArray) => line.title).map((line: valueArray) => (
     <div id="post" key={line.id}>
       <h1>{line.title}</h1>
-      <span>data do post: {moment.tz((line.created_at), 'America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss')}</span>
+      <span>Criado em: {moment.tz((line.created_at), 'America/Sao_Paulo').format('YYYY-MM-DD HH:mm:ss')}</span>
       <div id="linha">
       </div>
       <p>{line.description}</p>
